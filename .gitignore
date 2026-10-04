@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Python & pytest cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment variables & secrets
+.env
+
+# IDE local configs
+.vscode/
+.idea/
+
+# Qase & Allure reports
+.qase/
+allure-results/
+allure-report/
