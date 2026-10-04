@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: RealWorld Conduit API - Tags
+  description: Tags module API documentation
+  contact:
+    name: RealWorld
+    url: https://www.realworld.how
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  version: 1.0.0
+tags:
+  - name: Tags
+servers:
+  - url: https://api.realworld.io/api
+paths:
+  /tags:
+    get:
+      tags:
+        - Tags
+      summary: Get tags
+      description: Get tags. Auth not required
+      operationId: GetTags
+      responses:
+        '200':
+          $ref: '#/components/responses/TagsResponse'
+        '422':
+          $ref: '#/components/responses/GenericError'
+components:
+  schemas:
+    GenericErrorModel:
+      required:
+        - errors
+      type: object
+      properties:
+        errors:
+          required:
+            - body
+          type: object
+          properties:
+            body:
+              type: array
+              items:
+                type: string
+  responses:
+    TagsResponse:
+      description: Tags
+      content:
+        application/json:
+          schema:
+            required:
+              - tags
+            type: object
+            properties:
+              tags:
+                type: array
+                items:
+                  type: string
+    Unauthorized:
+      description: Unauthorized
+      content: {}
+    GenericError:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericErrorModel'
+    EmptyOkResponse:
+      description: No content
+      content: {}\n

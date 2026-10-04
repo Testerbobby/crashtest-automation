@@ -1,0 +1,11 @@
+{
+  "mode": "testops",
+  "project": "CRASHTEST",
+  "token": "7ed95479cc03812f7e0ec3feef87e60880c4427eb57fb98c6a888d032967082e",
+  "testops": {
+    "api": {
+      "token": "7ed95479cc03812f7e0ec3feef87e60880c4427eb57fb98c6a888d032967082e"
+    },
+    "project": "CRASHTEST"
+  }
+}
